@@ -10,17 +10,17 @@ namespace ExerciseRelations
     {
         static void Main(string[] args)
         {
-
         }
     }
-
 
     public abstract class Campesino
     {
         //ATRIBUTOS PRINCIPALES:
 
-        int hpTotal, mpTotal, nivel;
-        string nombre;
+        public int HpTotal { get; set; }
+        public int MpTotal { get; set; }
+        public int Nivel { get; set; }
+        public string Nombre { get; set; }
 
         public abstract Campesino(string nombre, int nivel, int hpTotal, int mpTotal)
         {
@@ -30,57 +30,75 @@ namespace ExerciseRelations
             this.mpTotal = mpTotal;
         }
 
-        //SET Y GET
+       //METODOS:
 
-        public int hpTotal { get; set; }
-        public int mpTotal { get; set; }
-        public int nivel { get; set; }
-        public string nombre { get; set; }
-
-        //METODOS:
-
-        public abstract void unirseMazmorra()
-        {
-
-        }
+        public abstract void UnirseFiesta();
 
     }
 
-    public class Mago : Campesino
+    public class Mago : Campesino, Sanador
     {
-        private int poderHabilidad;
+        public bool Pociones { get; set; }
+        public int PoderHabilidad { get; set; }
 
         public Mago(string nombre, int nivel, int hpTotal, int mpTotal, int poderHabilidad) : base(nombre, nivel, hpTotal, mpTotal)
         {
             this.poderHabilidad = poderHabilidad;
 
         }
-        public int poderHabilidad { get; set; }
+        public void Revivir()
+        {
+        }
+
     }
 
-
-    public class Guerrero : Campesino
+    public class Guerrero : Campesino, Explorador
     {
-        private int defensa;
+        public int Defensa { get; set; }
+        public string Mochila { get; set; }
 
         public Guerrero(string nombre, int nivel, int hpTotal, int mpTotal, int defensa) : base(nombre, nivel, hpTotal, mpTotal)
         {
             this.defensa = defensa;
         }
 
-        public int defensa { get; set; }
+        public void UnirseGremio()
+        {
+
+        }
     }
 
-    public class Arquero : Campesino
+    public class Arquero : Campesino, Asesino
     {
-        private int ataque;
+        public int Ataque { get; set; }
+        public int VelocidadAtaque { get; set; }
 
         public Arquero(string nombre, int nivel, int hpTotal, int mpTotal, int ataque) : base(nombre, nivel, hpTotal, mpTotal)
         {
             this.ataque = ataque;
         }
 
-        public int ataque { get; set; }
+        public void HacerseInvisible()
+        {
+        }
+    }
+
+    public interface Explorador
+    {
+        string Mochila { get; set; }
+        void UnirseGremio();
+    }
+
+    public interface Sanador
+    {
+        public bool Pociones { get; set; }
+        void Revivir();
+    }
+
+    public interface Asesino
+    {
+        public int VelocidadAtaque { get; set; }
+        void HacerseInvisible();
     }
 
 
