@@ -15,8 +15,6 @@ namespace ExerciseRelations
 
     public abstract class Campesino
     {
-        //ATRIBUTOS PRINCIPALES:
-
         public int HpTotal { get; set; }
         public int MpTotal { get; set; }
         public int Nivel { get; set; }
@@ -30,10 +28,7 @@ namespace ExerciseRelations
             this.mpTotal = mpTotal;
         }
 
-       //METODOS:
-
         public abstract void UnirseFiesta();
-
     }
 
     public class Mago : Campesino, Sanador
@@ -44,7 +39,6 @@ namespace ExerciseRelations
         public Mago(string nombre, int nivel, int hpTotal, int mpTotal, int poderHabilidad) : base(nombre, nivel, hpTotal, mpTotal)
         {
             this.poderHabilidad = poderHabilidad;
-
         }
         public void Revivir()
         {
@@ -64,7 +58,6 @@ namespace ExerciseRelations
 
         public void UnirseGremio()
         {
-
         }
     }
 
@@ -100,6 +93,4 @@ namespace ExerciseRelations
         public int VelocidadAtaque { get; set; }
         void HacerseInvisible();
     }
-
-
 }
