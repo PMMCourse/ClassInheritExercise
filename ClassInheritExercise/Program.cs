@@ -14,10 +14,11 @@ namespace ExerciseRelations
             Campesino pj2 = new Mago("Mago1", 34, 600, 2500, 670);
             Campesino pj3 = new Guerrero("Guerrero1", 98, 5000, 3000, 890);
 
-            pj1.UnirseFiesta();
-            pj2.UnirseFiesta();
-            pj3.UnirseFiesta();
+            Gestion opciones = new Gestion();
 
+            opciones.ReclutarGremio(pj3);
+            opciones.UnirParty(pj2);
+            opciones.UnirParty(pj1);
         }
     }
 
@@ -35,8 +36,6 @@ namespace ExerciseRelations
             this.hpTotal = hpTotal;
             this.mpTotal = mpTotal;
         }
-
-        public abstract void UnirseFiesta();
     }
 
     public class Mago : Campesino, Sanador
@@ -53,11 +52,6 @@ namespace ExerciseRelations
             Console.WriteLine("Has revivido a tus aliados");
         }
 
-        public void UnirseFiesta()
-        {
-            Console.WriteLine("!Mago!, Te has unido a una fiesta");
-        }
-
     }
 
     public class Guerrero : Campesino, Explorador
@@ -70,14 +64,9 @@ namespace ExerciseRelations
             this.defensa = defensa;
         }
 
-        public void UnirseGremio()
+        public void Explorar()
         {
-            Console.WriteLine("Guerrero. Acabas de unirte a un GREMIO.");
-        }
-
-        public void UnirseFiesta()
-        {
-            Console.WriteLine("!Gurerrero!, Te has unido a una fiesta");
+            Console.WriteLine("Estas explorando la zona");
         }
     }
 
@@ -95,17 +84,43 @@ namespace ExerciseRelations
         {
             Console.WriteLine("Ahora eres invisible");
         }
+    }
 
-        public void UnirseFiesta()
+    public class Gestion
+    {
+        List<Guerrero> gremio; //SOLO GUERREROS PUEDEN UNIRSE A GREMIOS.
+        List<Campesino> party; 
+
+        public Gestion()
         {
-            Console.WriteLine("!Arquero!, Te has unido a una fiesta");
         }
+
+        public void ReclutarGremio(Guerrero pj)
+        {
+            gremio.Add(pj);
+            Console.WriteLine("Guerrero. Te has unido satisfactoriamente al gremio.");
+        }
+
+        public void UnirParty(Campesino pj2)
+        {
+            party.Add(pj2);
+            Console.WriteLine($"!Te has unido a la Party! {pj2.Nombre}");
+        }
+
+        public void VerParty()
+        {
+            foreach(Campesino i in party)
+            {
+                Console.WriteLine($"Usuario: {i.Nombre} -- Nivel: {i.Nivel}");
+            }
+        }
+
     }
 
     public interface Explorador
     {
         string Mochila { get; set; }
-        void UnirseGremio();
+        void Explorar();
     }
 
     public interface Sanador
