@@ -10,6 +10,14 @@ namespace ExerciseRelations
     {
         static void Main(string[] args)
         {
+            Campesino pj1 = new Arquero("Arquero1",70,700,1200,1900);
+            Campesino pj2 = new Mago("Mago1", 34, 600, 2500, 670);
+            Campesino pj3 = new Guerrero("Guerrero1", 98, 5000, 3000, 890);
+
+            pj1.UnirseFiesta();
+            pj2.UnirseFiesta();
+            pj3.UnirseFiesta();
+
         }
     }
 
@@ -42,6 +50,12 @@ namespace ExerciseRelations
         }
         public void Revivir()
         {
+            Console.WriteLine("Has revivido a tus aliados");
+        }
+
+        public void UnirseFiesta()
+        {
+            Console.WriteLine("!Mago!, Te has unido a una fiesta");
         }
 
     }
@@ -58,6 +72,12 @@ namespace ExerciseRelations
 
         public void UnirseGremio()
         {
+            Console.WriteLine("Guerrero. Acabas de unirte a un GREMIO.");
+        }
+
+        public void UnirseFiesta()
+        {
+            Console.WriteLine("!Gurerrero!, Te has unido a una fiesta");
         }
     }
 
@@ -73,6 +93,12 @@ namespace ExerciseRelations
 
         public void HacerseInvisible()
         {
+            Console.WriteLine("Ahora eres invisible");
+        }
+
+        public void UnirseFiesta()
+        {
+            Console.WriteLine("!Arquero!, Te has unido a una fiesta");
         }
     }
 
