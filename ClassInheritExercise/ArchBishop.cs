@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassInheritExercise
 {
-    // Interfaz Curador
+    // Interfaz ArzoBispo
     interface ArchBishop
     {
         // Metodo Lanzar Lluvia Celestial
