@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace ClassInheritExercise
 {
-    class Program
+    public class gremio
     {
-        static void Main(string[] args)
-        {
-
-        }
+        public gremio(guerrero gg) { }
+        public gremio(asesino ga) { }
+        public gremio(mago gm) { }
     }
 }

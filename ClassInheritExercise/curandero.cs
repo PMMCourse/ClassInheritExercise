@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace ClassInheritExercise
 {
-    class Program
+    interface Icurandero
     {
-        static void Main(string[] args)
-        {
-
-        }
+        void curar();
+        void reanimar();
     }
 }

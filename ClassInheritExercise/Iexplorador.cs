@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace ClassInheritExercise
 {
-    class Program
+    interface Iexplorador
     {
-        static void Main(string[] args)
-        {
-
-        }
+        void brujula();
+        void mapa();
     }
 }
