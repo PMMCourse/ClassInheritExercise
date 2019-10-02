@@ -56,6 +56,12 @@ namespace ClassInheritExercise
         }
     }
 
+    interface Ilibromagia
+    {
+        void generarMana();
+        void lanzarConjuro();
+    }
+
     //Especializacion de campesino a guerrero
     public class Guerrero : Campesino
     {
@@ -64,7 +70,7 @@ namespace ClassInheritExercise
         public int furia { get; protected set; }
 
         //Constructor de guerrero
-        public Guerrero(string nombre, int nivel, int hp, int furia, int defensa) : base(nombre, nivel, hp, mp, exp)
+        public Guerrero(string nombre, int nivel, int hp, int furia, int defensa, int exp) : base(nombre, nivel, hp, mp, exp)
         {
             this.defensa = defensa;
             base.mp = furia; //Cambio de mp(Maná) a furia que es el recuerso que gastan los guerreros
@@ -74,11 +80,21 @@ namespace ClassInheritExercise
     }
 
     //Especializaciion de campesino a mago
-    public class Mago : Campesino
+    public class Mago : Campesino, Ilibromagia
     {
         public int magia { get; protected set; }
 
-        public Mago(string nombre, int nivel, int hp, int mp, int magia) : base(nombre, nivel, hp, mp, exp)
+        //uso de la interfaz
+        private void LanzarConjuro() => throw new NotImplementedException();
+        public void generarMana() => throw new NotImplementedException();
+     
+
+        public void lanzarConjuro()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Mago(string nombre, int nivel, int hp, int mp, int magia, int exp) : base(nombre, nivel, hp, mp, exp)
         {
             this.magia = magia;
             base.nombre = nombre;
@@ -88,17 +104,29 @@ namespace ClassInheritExercise
     }
 
     //Especialidad de campesino a healer
-    public class Healer : Campesino
+    public class Healer : Campesino , Ilibromagia
     {
         public int cura { get; protected set; }
 
-        public Mago(string nombre, int nivel, int hp, int mp, int cura) : base(nombre, nivel, hp, mp, exp)
+
+        public Healer(string nombre, int nivel, int hp, int mp, int cura, int exp) : base(nombre, nivel, hp, mp, exp)
         {
             this.cura = cura;
             base.nombre = nombre;
 
         }
 
+        //uso de la interfaz
+
+        void Ilibromagia.generarMana()
+        {
+            throw new NotImplementedException();
+        }
+
+        void Ilibromagia.lanzarConjuro()
+        {
+            throw new NotImplementedException();
+        }
     }
 
     //Especialiidad de campesiino a cazador
@@ -107,14 +135,14 @@ namespace ClassInheritExercise
         public int ataque { get; protected set; }
         public int enfoque { get; protected set; }
 
-        public Cazador(string nombre, int nivel, int hp, int enfoque, int ataque) : base(nombre, nivel, hp, mp, exp)
+        public Cazador(string nombre, int nivel, int hp, int enfoque, int ataque, int exp) : base(nombre, nivel, hp, mp, exp)
         {
             this.ataque = ataque;
             base.mp = enfoque; //Cambio de mp(Maná) a enfoque que es el recurso que gastan los cazadores
         }
 
         //Los Cazadores tienen acceso a mascotas
-        public class Mascota : Cazador
+        public class Mascota
         {
 
             public string nombreM { get; protected set; }
