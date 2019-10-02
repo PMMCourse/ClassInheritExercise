@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassInheritExercise
 {
-    class Program
+    class Class2
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }

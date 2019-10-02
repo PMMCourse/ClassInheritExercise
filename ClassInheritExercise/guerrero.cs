@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace ClassInheritExercise
 {
-    class Program
+    class guerrero : campesino
     {
-        static void Main(string[] args)
-        {
-
+        public int ad { set; get; }
+        public int defensa { set; get; }
+        public guerrero(int hp,int mp,int exp) {
         }
+
     }
 }
