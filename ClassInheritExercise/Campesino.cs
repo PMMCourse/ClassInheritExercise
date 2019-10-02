@@ -1,18 +1,25 @@
 ﻿using System;
 
-public interface ICampesino
+public abstract class Campesino
 {
-    int hp;
-    int mana;
-    int exp;
-	public ICampesino( int hp,int mana,int exp)
-	{
-        this.hp = hp;
-        this.mana = mana;
-        this.exp = exp;
-	}
+    public int mana{ set; get; }
+    public int exp{ set; get; }
+    public int hp { set; get; }
+    public void UnirseParty()
+    {
+    }
 }
-public class Mago : ICampesino
+public class Gremio
+{
+    public Gremio(Mago m1)
+    {
+    }
+    public Gremio(Guerrero g1)
+    {
+    }
+}
+
+public interface Mago : Campesino
 {
     public Mago(int hp, int mana, int exp) : base(hp, mana, exp){
         hp = hp;
@@ -21,7 +28,13 @@ public class Mago : ICampesino
     }
 
 }
-public class Guerrero : ICampesino
+public class Sanador : Mago
+{
+    public int curar(Campesino c1)
+    {
+    }
+}
+public interface Guerrero : Campesino
 {
     public Guerrero(int hp, int mana, int exp) : base(hp, mana, exp)
     {
@@ -29,4 +42,7 @@ public class Guerrero : ICampesino
         mana = mana;
         exp = exp;
     }
+}
+public class Espadachin : Guerrero
+{
 }
