@@ -46,6 +46,9 @@
   <ItemGroup>
     <Compile Include="campesino.cs" />
     <Compile Include="asesino.cs" />
+    <Compile Include="gremio.cs" />
+    <Compile Include="Iexplorador.cs" />
+    <Compile Include="curandero.cs" />
     <Compile Include="mago.cs" />
     <Compile Include="guerrero.cs" />
     <Compile Include="Program.cs" />
