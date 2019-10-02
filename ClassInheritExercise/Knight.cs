@@ -66,7 +66,7 @@ namespace ClassInheritExercise
         }
     }
 
-    // Clase Caballero2 que Hereda de Campesino e implementa la Interfaz Tank
+    // Clase Caballero2 que Hereda de Campesino e implementa la Interfaz Paladin
     class Knight2 : Knight, Paladin
     {
         //A
