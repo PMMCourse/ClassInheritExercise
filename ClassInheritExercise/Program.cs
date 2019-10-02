@@ -22,7 +22,8 @@ namespace ClassInheritExercise
          *          aloamtico
          *              brumoso
          *                  nacido de la bruma
-         *              
+         *  
+         *  
          */
 
 
