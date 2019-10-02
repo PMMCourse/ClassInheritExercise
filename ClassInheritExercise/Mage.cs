@@ -71,12 +71,7 @@ namespace ClassInheritExercise
         {
             Console.WriteLine("Rayo de Fuego");
         }
-        protected void AddToGuild(string guild)
-        {
-
-        }
-
-    }
+    } 
 
     // Clase Mago2 que Hereda de Campesino e implementa la Interfaz Warlock
     public class Mage2 : Mage, Warlock
