@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace ClassInheritExercise
 {
-    class Class2
+    class mago:campesino
     {
+
     }
 }

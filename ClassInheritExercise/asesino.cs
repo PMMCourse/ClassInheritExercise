@@ -8,5 +8,6 @@ namespace ClassInheritExercise
 {
     class asesino:campesino
     {
+
     }
 }
