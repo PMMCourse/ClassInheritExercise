@@ -8,10 +8,11 @@
     <OutputType>Exe</OutputType>
     <RootNamespace>ClassInheritExercise</RootNamespace>
     <AssemblyName>ClassInheritExercise</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -43,8 +44,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Campesino.cs" />
+    <Compile Include="ArchBishop.cs" />
+    <Compile Include="GameMaster.cs" />
+    <Compile Include="Knight.cs" />
+    <Compile Include="Mage.cs" />
+    <Compile Include="Paladin.cs" />
+    <Compile Include="Priest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sorcerer.cs" />
+    <Compile Include="Sura.cs" />
+    <Compile Include="Tank.cs" />
+    <Compile Include="Warlock.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
